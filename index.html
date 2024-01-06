@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html lang ="fr">
+	<head>
+		<meta charset ="UTF-8" />
+		<title>Jeu</title>
+	</head>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			outline: none;
+			border: none;
+			
+			width: 100%;
+			height: 100%;
+		}
+		canvas {
+			pointer-events: none;
+			width:  100%;
+			height: 100%;
+			display: block;
+			position: fixed;
+		}
+	</style>
+	<body>
+		<canvas id="canvas"></canvas>
+
+		<!-- game -->
+		<script src="scripts/engine.js"></script>
+		<script src="scripts/main.js"></script>
+
+		<!-- starting game -->
+		<script>
+			gameLoop()
+		</script>
+	</body>
+</html>
