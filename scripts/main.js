@@ -10,6 +10,7 @@ function update() {
 	ctx.fillStyle = "rgba(255, 255, 255, 1)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+	// movement controls
 	if (key["ArrowLeft"] || key["ArrowRight"]) {
 		if (key["ArrowLeft"]) {
 			player.vx = Math.max(player.vx - 2, -5);
@@ -20,8 +21,20 @@ function update() {
 	} else {
 		player.vx = player.vx * 0.9;
 	}
-	console.log(player.vx);
+	if (key["ArrowUp"] || key["ArrowDown"]) {
+		if (key["ArrowUp"]) {
+			player.vy = Math.max(player.vy - 2, -5);
+		}
+		if (key["ArrowDown"]) {
+			player.vy = Math.min(player.vy + 2, 5);
+		}
+	} else {
+		player.vy = player.vy * 0.9;
+	}
 	
+	// update player position
+	player.x += player.vx;
+	player.y += player.vy;
 
 	// draw a rotating square
 	ctx.fillStyle = "rgba(0, 0, 0, 1)";
