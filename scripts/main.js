@@ -1,8 +1,27 @@
 
+player = {
+	x: 0,
+	y: 0,
+	vx: 0,
+	vy: 0,
+}
 
 function update() {
 	ctx.fillStyle = "rgba(255, 255, 255, 1)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+	if (key["ArrowLeft"] || key["ArrowRight"]) {
+		if (key["ArrowLeft"]) {
+			player.vx = Math.max(player.vx - 2, -5);
+		}
+		if (key["ArrowRight"]) {
+			player.vx = Math.min(player.vx + 2, 5);
+		}
+	} else {
+		player.vx = player.vx * 0.9;
+	}
+	console.log(player.vx);
+	
 
 	// draw a rotating square
 	ctx.fillStyle = "rgba(0, 0, 0, 1)";
