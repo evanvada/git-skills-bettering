@@ -13,20 +13,20 @@ function update() {
 	// movement controls
 	if (key["ArrowLeft"] || key["ArrowRight"]) {
 		if (key["ArrowLeft"]) {
-			player.vx = Math.max(player.vx - 2, -5);
+			player.vx = Math.max(player.vx - 1.5, -10);
 		}
 		if (key["ArrowRight"]) {
-			player.vx = Math.min(player.vx + 2, 5);
+			player.vx = Math.min(player.vx + 1.5, 10);
 		}
 	} else {
 		player.vx = player.vx * 0.9;
 	}
 	if (key["ArrowUp"] || key["ArrowDown"]) {
 		if (key["ArrowUp"]) {
-			player.vy = Math.max(player.vy - 2, -5);
+			player.vy = Math.max(player.vy - 1.5, -10);
 		}
 		if (key["ArrowDown"]) {
-			player.vy = Math.min(player.vy + 2, 5);
+			player.vy = Math.min(player.vy + 1.5, 10);
 		}
 	} else {
 		player.vy = player.vy * 0.9;
