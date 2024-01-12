@@ -38,16 +38,14 @@ function update() {
 
 	// draw a rotating square
 	ctx.fillStyle = "rgba(0, 0, 0, 1)";
-	ctx.translate(canvas.width/2, canvas.height/2);
+	ctx.translate(canvas.width/2+player.x, canvas.height/2+player.y);
 	ctx.rotate(upc*0.05); // upc = updates count, used here as a delta time
 	ctx.fillRect(-50, -50, 100, 100);
 	ctx.rotate(-upc*0.05);
-	ctx.translate(-canvas.width/2, -canvas.height/2);
 
 	// draw a rotating triangle
 	let h = 30*Math.sqrt(3)
 	ctx.fillStyle = "rgba(256, 256, 256, 1)";
-	ctx.translate(canvas.width/2, canvas.height/2);
 	ctx.rotate(upc*0.1);
 	ctx.beginPath();
 	ctx.moveTo(0, -h + h/3);
@@ -55,6 +53,6 @@ function update() {
 	ctx.lineTo(30, h/3);
 	ctx.fill();
 	ctx.rotate(-upc*0.1);
-	ctx.translate(-canvas.width/2, -canvas.height/2);
+	ctx.translate(-canvas.width/2-player.x, -canvas.height/2-player.y);
 
 }
